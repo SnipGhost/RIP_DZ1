@@ -1,0 +1,32 @@
+.profile{
+    margin-top: 10%;
+    padding: auto;
+    text-align: center;
+}
+.profile_avatar_full{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    vertical-align: top;
+    margin-right: 20px;
+}
+.description {
+    display: inline-block;
+    width: auto;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 20px;
+    border-collapse: collapse;
+    text-align: center;
+}
+.action_bar{
+    display: block;
+    width: 130px;
+    margin: auto;
+    margin-top: 20px;
+}
+.container {
+    display: block;
+    width: 300px;
+    padding: auto;
+    margin-top: 10%;
+}

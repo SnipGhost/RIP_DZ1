@@ -1,0 +1,10 @@
+*.png
+*.gif
+*.jpg
+*.jpeg
+!media/game_images/default_game_image.png
+!media/avatars/root.jpg
+!media/avatars/default_avatar.png
+!GameManager/static/img/*
+__pycache__/*
+blackjack.sock

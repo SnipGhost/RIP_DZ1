@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Игры{% endblock %}
+{% block extrastyles %}
+<link rel="stylesheet" type="text/css" href="{% static "/css/games.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "/css/menu.css" %}">
+{% endblock %}
+{% block extrascripts %}
+{% endblock %}
+{% block content %}
+{% include 'menu.html' with user=user %}
+<ul class="games_list" id="games">
+    {% for game in games %}
+    {% include 'game_list/game_element.html' with element=game %}
+    {% empty %}
+    <div id="no_games" class="central_msg">
+        <p>Коллекция игр пуста</p>
+        <img class="no_games_img" src="{% static "/img/no_games.jpg" %}" />
+    </div>
+    {% endfor %}
+</ul>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form method="post" enctype="multipart/form-data" id="form_create">
+            {% csrf_token %}
+            {{ form_create.as_p }}
+            <input type="submit" value="Добавить" id="add">
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="{% static "/js/games.js" %}"></script>
+<script type="text/javascript" src="{% static "/js/create.js" %}"></script>
+{% endblock %}

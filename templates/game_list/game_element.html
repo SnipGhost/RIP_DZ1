@@ -1,0 +1,9 @@
+<li>
+    <div class="game">
+        <div class = 'game_image'
+             style="background:
+                         url('/media/{{element.game_image}}') no-repeat center;
+                         background-size: cover;"></div>
+        <a href="{% url 'GameManager:game_url' element.id %}">{{ element.name }}</a>
+    </div>
+</li>

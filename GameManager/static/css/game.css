@@ -1,0 +1,46 @@
+.game {
+    margin: 0px 40px;
+    margin-top: 80px;
+    margin-bottom: 10px;
+    padding: auto;
+    text-align: center;
+}
+
+.game_image_full{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    vertical-align: top;
+    margin-right: 20px;
+}
+.description {
+    display: inline-block;
+    width: auto;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 18px;
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td:first-child {
+    background: rgb(159, 198, 233);
+    color: white;
+}
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+td {
+    background: #D8E6F3;
+    padding: 10px 20px;
+}
+th:first-child, td:first-child {
+    text-align: left;
+}
+.action_bar{
+    display: block;
+    width: 130px;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin:auto;
+}

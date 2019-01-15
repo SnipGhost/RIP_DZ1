@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Профиль {% endblock %}
+{% block extrastyles %}
+<link rel="stylesheet" type="text/css" href="{% static "/css/profile.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "/css/menu.css" %}">
+{% endblock %}
+{% block content %}
+{% include 'menu.html' with user=profile %}
+<div class="profile">
+    <div class='profile_avatar_full' style="background: url('/media/{{profile.avatar}}') no-repeat center; background-size: contain;">
+    </div>
+    <div class="description">
+        {{ profile.username }}
+        <br>
+        <br>
+        <div style="font-size: 14px">
+            О себе:
+        </div>
+        <output>
+            {% if profile.description %}
+            {{ profile.description }}
+            {% else %}
+            Пока ничего
+            {% endif %}
+        </output>
+    </div>
+</div>
+<div class=action_bar>
+    <form action="{% url 'P:profile_update'%}">
+        <div class="space">
+            <button type="submit" class="btn btn-primary">Обновить профиль</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

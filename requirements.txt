@@ -1,0 +1,7 @@
+django
+mysql
+mysql-connector-python
+mysqlclient
+PyMySQL
+PyMysqlDB
+uwsgi

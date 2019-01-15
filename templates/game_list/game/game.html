@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{ game.name }} {% endblock %}
+{% block extrastyles %}
+<link rel="stylesheet" type="text/css" href="{% static "/css/game.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "/css/menu.css" %}">
+{% endblock %}
+{% block content %}
+{% include 'menu.html' with user=user %}
+<div class="game">
+    <div class='game_image_full' style="background: url('/media/{{game.game_image}}') no-repeat center;
+                             background-size: contain;">
+    </div><br><br>
+    <div class="description">
+        <table>
+            <tr>
+                <td>Игра:</td>
+                <td>{{game.name}}</td>
+            </tr>
+            <tr>
+                <td>Описание:</td>
+                <td>{{ game.description }}</td>
+            </tr>
+            <tr>
+                <td>Платформа:</td>
+                <td>{{ game.get_platform_display }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class=action_bar>
+    {% if is_owner %}
+    {% if last_owner %}
+    <form action="{% url 'GameManager:game_remove' game.id%}">
+        <div class="space">
+            <button type="submit" class="btn btn-primary">Удалить игру</button>
+        </div>
+    </form>
+    {% else %}
+    <form action="{% url 'GameManager:game_leave' game.id%}">
+        <div class="space">
+            <button type="submit" class="btn btn-primary">Удалить из своей коллекции</button>
+        </div>
+    </form>
+    {% endif %}
+    {% else %}
+    <form action="{% url 'GameManager:game_join' game.id%}">
+        <div class="space">
+            <button type="submit" class="btn btn-primary">Добавить к себе в коллекцию</button>
+        </div>
+    </form>
+    {% endif %}
+</div>
+{% endblock %}

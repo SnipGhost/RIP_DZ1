@@ -1,0 +1,39 @@
+<div class=menu_bar>
+    <div class="left_nav">
+        <form class="btn-group" action="{% url "game_creation" %}">
+            <button type="submit" class="btn btn-primary">Добавить игру</button>
+            <input type="hidden" class="btn">
+        </form>
+        <form class="btn-group" action="{% url "game_list" whose='my' %}">
+            <input type="hidden" class="btn">
+            <button type="submit" class="btn btn-primary">Мои игры</button>
+            <input type="hidden" class="btn">
+        </form>
+        <form class="btn-group" action="{% url "game_list" whose='all' %}">
+            <input type="hidden" class="btn">
+            <button type="submit" class="btn btn-primary">Все игры</button>
+        </form>
+        {% if request.path == '/games_list/my/' or request.path == '/games_list/all/' %}
+        <a class="btn btn-success" href="#" id="myBtn">&#10010;</a></form>
+        {% endif %}
+    </div>
+    <div class="rigth_nav">
+        <div class="current_user">
+            <div class='user_avatar' style="background:
+                         url('/media/{{user.avatar}}') no-repeat center;
+                         background-size: cover;">
+                <form action="{% url "P:profile" %}">
+                    <button type="submit" class="btn btn-primary" style="opacity: 0"></button>
+                </form>
+            </div>
+            <div class='username'>
+                {{ user.username }}
+            </div>
+        </div>
+        <div class="button logout_btn">
+            <form action="{% url "logout"%}">
+                <button type="submit" class="btn btn-danger">&#10008;</button>
+            </form>
+        </div>
+    </div>
+</div>
