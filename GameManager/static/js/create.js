@@ -51,7 +51,7 @@ update_button.onclick = function (e) {
 
             locker = false;
             count = getCount(element, false);
-            if (count % 6 == 0 && count != 6) {
+            if (count % 6 == 0) {
                 locker = true
             }
 

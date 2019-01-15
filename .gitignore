@@ -6,5 +6,7 @@
 !media/avatars/root.jpg
 !media/avatars/default_avatar.png
 !GameManager/static/img/*
+BlackJack/__pycache__/*
+GameManager/__pycache__/*
 __pycache__/*
 blackjack.sock

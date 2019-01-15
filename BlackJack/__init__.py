@@ -1,3 +1,3 @@
-import pymysql
-
-pymysql.install_as_MySQLdb()
+# import pymysql
+# For older versions of uWSGI
+# pymysql.install_as_MySQLdb()

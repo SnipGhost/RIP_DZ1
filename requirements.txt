@@ -4,4 +4,3 @@ mysql-connector-python
 mysqlclient
 PyMySQL
 PyMysqlDB
-uwsgi

@@ -1,4 +1,4 @@
 nginx -s stop
 nginx
-uwsgi --ini uwsgi.ini
+/usr/local/bin/uwsgi --ini uwsgi.ini
 
